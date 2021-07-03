@@ -18,4 +18,11 @@ clean:
 .PHONY:install-sdk
 
 install-sdk:
-	sudo cp -d $(LDIR)/lib*.so* /usr/lib
+	cp -d $(LDIR)/lib*.so* /usr/lib
+	cp -d $(LDIR)/ArduCamLib.h /usr/include/
+        
+.PHONY:uninstall-sdk
+
+uninstall-sdk:
+	rm /usr/lib/libArduCam*
+	rm /usr/include/ArduCamLib.h
